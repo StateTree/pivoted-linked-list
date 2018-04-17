@@ -61,6 +61,8 @@ PivotedLinkedList.prototype.shiftPivot = function(shift){
 	}
 
 	this.pivot = current;
+
+	return this.pivot;
 };
 
 PivotedLinkedList.prototype.shiftPivotToHead = function(){
