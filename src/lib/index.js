@@ -96,6 +96,13 @@ PivotedLinkedList.prototype.toArray = function(){
 	return array;
 };
 
+PivotedLinkedList.prototype.getPivotElement = function(){
+	if(this.pivot){
+		return this.pivot.element;
+	}
+	return null;
+};
+
 PivotedLinkedList.prototype.next = function(){
 	const next = this.pivot.next ? this.pivot.next :  this.pivot;
 	this.pivot = next;
