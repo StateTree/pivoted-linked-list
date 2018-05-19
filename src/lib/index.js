@@ -9,35 +9,38 @@ export default class PivotedLinkedList {
 	}
 }
 
-PivotedLinkedList.prototype.insert = function(element){
+PivotedLinkedList.prototype.insert = function(element, preInsert, postInsert){
 	const newNode = new Node(element);
 	this.length++;
 
 	let current, next;
 
 	if(!this.pivot){ // inserting as first element
+		preInsert && preInsert(newNode);
 		this.pivot = newNode;
 		this.head = newNode;
+		postInsert && postInsert(newNode);
 	} else if(this.pivot.next){ // inserting in middle
-
 		current = this.pivot;
 		next = this.pivot.next;
-
+		preInsert && preInsert(current,newNode,next);
 		newNode.next = current.next;
 		newNode.prev = current;
 
 		current.next = newNode;
 		next.prev = newNode;
 
-
 		this.pivot = newNode;
+		postInsert && postInsert(current,newNode,next);
 	} else { // inserting as last element
 		current = this.pivot;
+		preInsert && preInsert(current,newNode);
 		current.next = newNode;
 		newNode.prev = current;
 
 		this.pivot = newNode;
 		this.tail = newNode;
+		postInsert && postInsert(current,newNode);
 	}
 
 };
