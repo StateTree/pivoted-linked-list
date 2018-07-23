@@ -117,3 +117,18 @@ PivotedLinkedList.prototype.prev = function(){
 	this.pivot = prev;
 	return prev;
 };
+
+PivotedLinkedList.prototype.isPivotHead = function(){
+	return this.pivot === this.head;
+};
+
+PivotedLinkedList.prototype.isPivotTail = function(){
+	return this.pivot === this.tail;
+};
+
+PivotedLinkedList.prototype.reset = function(){
+	this.pivot = null;
+	this.head = null;
+	this.tail = null;
+	this.length = 0;
+};
