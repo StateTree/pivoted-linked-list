@@ -38,7 +38,7 @@
     "babel-plugin-istanbul": "^5.0.1",
     "chai": "^4.2.0",
     "co-exec": "^1.1.0",
-    "codecov": "^3.5.0",
+    "codecov": "^3.8.3",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^5.6.1",
